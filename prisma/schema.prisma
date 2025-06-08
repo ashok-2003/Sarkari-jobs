@@ -77,3 +77,61 @@ model AppliedJob {
   jobId     String
   appliedAt DateTime @default(now())
 }
+
+
+
+
+// Additional models for various items
+model JobItem {
+  id        String   @id @default(cuid()) 
+  href      String   @unique 
+  text      String   
+  last_date String?  
+  description String?  
+  imageUrl    String?
+
+  // Automatic timestamps for when the record was created and last updated
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model ResultItem {
+  id        String   @id @default(cuid())
+  href      String   @unique 
+  text      String   
+  description String?  
+  imageUrl    String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model AdmissionItem {
+  id        String   @id @default(cuid())
+  href      String   @unique 
+  text      String   
+  last_date String? 
+  description String?  
+  imageUrl    String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model AnswerKeyItem {
+  id        String   @id @default(cuid())
+  href      String   @unique 
+  text      String  
+  description String?  
+  imageUrl    String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model AdmitCardItem {
+  id        String   @id @default(cuid())
+  href      String   @unique 
+  text      String 
+  description String?  
+  imageUrl    String?  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
