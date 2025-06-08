@@ -5,12 +5,6 @@ import { Moon, Sun } from "lucide-react"
 import { useTheme } from "next-themes"
 
 import { Button } from "@/components/ui/button"
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
 
 export function ModeToggle() {
   const { theme , setTheme } = useTheme()
@@ -20,12 +14,9 @@ export function ModeToggle() {
   }
 
   return (
-    <Button variant="secondary" size="icon" className=" bg-transparent" onClick={Toggle}>
-      {theme === "light" ? (
-        <Sun className="h-[1.2rem] w-[1.2rem]" />
-      ) : (
-        <Moon className="h-[1.2rem] w-[1.2rem]" />
-      )}
+    <Button variant="secondary" size="icon" className="bg-transparent" onClick={Toggle}>
+      <Sun className="h-[1.2rem] w-[1.2rem] dark:hidden" /> {/* Sun hidden in dark mode */}
+      <Moon className="h-[1.2rem] w-[1.2rem] hidden dark:block" /> {/* Moon hidden in light, shown in dark */}
       <span className="sr-only">Toggle theme</span>
     </Button>
   )
