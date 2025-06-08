@@ -34,7 +34,7 @@ export const Navigation_Menu = () => {
     const pathname = usePathname();
 
     const navItems = [
-        { href: "/job", label: "Jobs" },
+        { href: "/jobs", label: "Jobs" },
         { href: "/result", label: "Results" },
         { href: "/answer-key", label: "Answer Key" },
         { href: "/admission", label: "Admission" },

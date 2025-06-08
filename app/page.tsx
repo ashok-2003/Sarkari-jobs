@@ -134,7 +134,7 @@ function SampleJobs() {
 
 const aboutContent = {
   mainTitle: "Sarkari Jobs: Your Gateway to Government Career Success",
-  introParagraph: `The future is uncertain, but a **Sarkari Job** can help you secure your future. Explore our valuable resources and guidance at **Sarkari Jobs** to find your path. Did you know that over 1.5 million people lost their jobs in August 2021 in rural and urban India? Yes, the COVID-19 pandemic has hit the job market hard. Small businesses and multinationals alike have had to reconsider their staffing requirements.`,
+  introParagraph: `The future is uncertain, but a Sarkari Job can help you secure your future. Explore our valuable resources and guidance at Sarkari Jobs to find your path. Did you know that over 1.5 million people lost their jobs in August 2021 in rural and urban India? Yes, the COVID-19 pandemic has hit the job market hard. Small businesses and multinationals alike have had to reconsider their staffing requirements.`,
   secureCareerSection: {
     title: "Are You Looking for a Secure Career?",
     points: [
@@ -146,11 +146,11 @@ const aboutContent = {
   },
   whyChooseGovJobSection: {
     title: "Why Choose a Government Job?",
-    paragraph: `In India, a **Sarkari Naukri** is highly sought-after. It's the ultimate career goal, offering long-term security, good benefits, and a purposeful life. With unemployment rising, the demand for stable **Sarkari Naukri** has surged. Government jobs offer competitive salaries, benefits, and pensions. Top roles include IAS, IFS, and IPS.`,
+    paragraph: `In India, a Sarkari Naukri is highly sought-after. It's the ultimate career goal, offering long-term security, good benefits, and a purposeful life. With unemployment rising, the demand for stable Sarkari Naukri has surged. Government jobs offer competitive salaries, benefits, and pensions. Top roles include IAS, IFS, and IPS.`,
   },
   exploreJobsSection: {
     mainTitle: "Explore Diverse Government Job Opportunities",
-    introParagraph: `There are a wide variety of **government job opportunities** in India, catering to diverse interests and qualifications.`,
+    introParagraph: `There are a wide variety of government job opportunities in India, catering to diverse interests and qualifications.`,
     jobTypes: [
       {
         title: "1. Indian Administrative Services (IAS) and Indian Foreign Services (IFS) Jobs",
@@ -166,17 +166,17 @@ const aboutContent = {
       },
       {
         title: "4. Defence Jobs",
-        description: `Opportunities within the National Defence Academy (NDA) across Army, Navy, Air Force, Coast Guard, etc. These roles have strict age, physical, and vision standards. Cadet trainees receive a stipend of INR 56,100 per month. **Sarkari Jobs** simplifies finding these diverse positions, from police constables to High Court Review Officers, by providing all necessary details.`,
+        description: `Opportunities within the National Defence Academy (NDA) across Army, Navy, Air Force, Coast Guard, etc. These roles have strict age, physical, and vision standards. Cadet trainees receive a stipend of INR 56,100 per month. Sarkari Jobs simplifies finding these diverse positions, from police constables to High Court Review Officers, by providing all necessary details.`,
       },
     ],
   },
   navigatingMarketSection: {
     mainTitle: "Navigating the Competitive Government Job Market",
-    introParagraph: `Securing a **Sarkari Naukri** is challenging due to high competition, but with the right strategy and resources, it's achievable.`,
+    introParagraph: `Securing a Sarkari Naukri is challenging due to high competition, but with the right strategy and resources, it's achievable.`,
     steps: [
       {
         title: "Step 1: Research Job Requirements with Sarkari Jobs",
-        paragraph: `Before applying, understand eligibility, deadlines, fees, and examination processes. **Sarkari Jobs** provides a comprehensive one-page summary for each role, covering:`,
+        paragraph: `Before applying, understand eligibility, deadlines, fees, and examination processes. Sarkari Jobs provides a comprehensive one-page summary for each role, covering:`,
         list: [
           "Number of Vacancies",
           "Important Dates (Application Start/End, Exam Dates)",
@@ -188,29 +188,29 @@ const aboutContent = {
       },
       {
         title: "Understanding Eligibility & Deadlines",
-        paragraph: `Government job eligibility varies greatly by role, encompassing age, education, nationality, and more. Our platform ensures you have all key dates at your fingertips, so you never miss an opportunity. **Sarkari Jobs** displays critical dates like Application Start/Last Date, Exam Fee Deadlines, Examination Dates, and Result Availability, ensuring you're always informed.`,
+        paragraph: `Government job eligibility varies greatly by role, encompassing age, education, nationality, and more. Our platform ensures you have all key dates at your fingertips, so you never miss an opportunity. Sarkari Jobs displays critical dates like Application Start/Last Date, Exam Fee Deadlines, Examination Dates, and Result Availability, ensuring you're always informed.`,
       },
     ],
   },
   trustedSourceSection: {
     mainTitle: "Sarkari Jobs: Your Trusted Source for Updates",
-    introParagraph: `**SarkariJobs.com** is your ultimate resource for all government job updates, results, and notifications, including **Sarkari Exams** from state and central governments.`,
+    introParagraph: `SarkariJobs.com is your ultimate resource for all government job updates, results, and notifications, including Sarkari Exams from state and central governments.`,
     subSections: [
       {
         title: "State-Level Exam Results & Jobs",
-        paragraph: `Find **Sarkari Jobs in Bihar**, **Sarkari Jobs in Jharkhand**, and especially **UP Sarkari Jobs**, which are in high demand. We provide detailed information for all state-conducted exams.`,
+        paragraph: `Find Sarkari Jobs in Bihar, Sarkari Jobs in Jharkhand, and especially UP Sarkari Jobs, which are in high demand. We provide detailed information for all state-conducted exams.`,
         title2: "Online Application Process Simplified",
-        paragraph2: `Applying for **Sarkari Naukri** online is easier than ever. **SarkariJobs.com** lists thousands of online forms. We keep you updated on all stages, from application to exam results.`,
+        paragraph2: `Applying for Sarkari Naukri online is easier than ever. SarkariJobs.com lists thousands of online forms. We keep you updated on all stages, from application to exam results.`,
       },
       {
         title: "Delhi Government Job Opportunities",
-        paragraph: `Delhi, being the capital, offers numerous government jobs from both state and central departments. **Sarkari Jobs Delhi** provides admit cards, results, and answer keys from institutions like DSSSB, Delhi Metro, Delhi Police, and AIIMS Delhi.`,
+        paragraph: `Delhi, being the capital, offers numerous government jobs from both state and central departments. Sarkari Jobs Delhi provides admit cards, results, and answer keys from institutions like DSSSB, Delhi Metro, Delhi Police, and AIIMS Delhi.`,
         title2: "Why Trust SarkariJobs.com?",
-        paragraph2: `Established on January 1, 2012, **SarkariJobs.com** has earned the trust of millions. Our dedicated 24x7 team ensures you receive the first and most accurate information on **government jobs**, exam results, admit cards, and exam dates for SSC, UPSC, and state/central government recruitments. Download the <span class="font-semibold">Sarkari Jobs App</span> today to get all information at your fingertips!`,
+        paragraph2: `Established on January 1, 2012, SarkariJobs.com has earned the trust of millions. Our dedicated 24x7 team ensures you receive the first and most accurate information on government jobs, exam results, admit cards, and exam dates for SSC, UPSC, and state/central government recruitments. Download the <span class="font-semibold">Sarkari Jobs App</span> today to get all information at your fingertips!`,
       },
     ],
   },
-  finalParagraph: `At **Sarkari Jobs**, we're committed to helping you achieve your dream of a secure and fulfilling career in the government sector. Explore our platform, leverage our resources, and take the first step towards your **Sarkari Naukri** today!`,
+  finalParagraph: `At Sarkari Jobs, we're committed to helping you achieve your dream of a secure and fulfilling career in the government sector. Explore our platform, leverage our resources, and take the first step towards your Sarkari Naukri today!`,
 };
 
 function AboutUsSection() {
