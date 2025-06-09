@@ -5,7 +5,6 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { Menu, User } from "lucide-react" // Make sure User is imported here!
 import { cva } from "class-variance-authority"
-import { cn } from "@/lib/utils"
 
 import {
     NavigationMenu,
@@ -15,7 +14,7 @@ import {
 } from "@/components/ui/navigation-menu"
 
 import { Button } from "@/components/ui/button"
-import { ModeToggle } from "@/components/modeToggle"
+import { ModeToggle } from "@/components/Reusable/modeToggle"
 import {
     DropdownMenu,
     DropdownMenuContent,

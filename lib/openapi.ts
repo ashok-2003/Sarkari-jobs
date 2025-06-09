@@ -137,9 +137,9 @@ export async function generateBatchContentDescriptions(
     }
 
     try {
-      // Attempt to parse the JSON string into an array of objects.
-      // Expected: Array<{ summary: string }>
-      const parsedDescriptions: Array<{ summary?: string; [key: string]: any }> = JSON.parse(responseContent);
+      // due to any type issue 
+
+      const parsedDescriptions: Array<{ summary?: string; [key: string]: string | unknown }> = JSON.parse(responseContent);
 
       // Validate if it's an array and if each item has a 'summary' string
       if (
