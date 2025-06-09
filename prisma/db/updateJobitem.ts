@@ -17,9 +17,9 @@ export async function updateJobItem(){
         const newJobItemsText = newJobItems.map(job => job.text);   
 
         // Configuration for AI API calls and retry logic.
-        const BATCH_SIZE = 50; 
+        const BATCH_SIZE = 40; 
         const MAX_AI_RETRIES = 4;    // Maximum retries for AI generation per batch.
-        const RETRY_DELAY_MS = 1000; // Delay before retrying AI call.
+        const RETRY_DELAY_MS = 2000; // Delay before retrying AI call.
 
         // Process new jobs in batches for AI description and DB insertion.
         for(var i = 0; i < newJobItemsText.length; i += BATCH_SIZE) {

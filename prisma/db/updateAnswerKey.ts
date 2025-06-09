@@ -29,9 +29,9 @@ export async function updateAnswerKeyItem() {
         const newAnswerKeyItemsText = newAnswerKeyItems.map(key => key.text);
 
         // Configuration for AI API calls and retry logic (same as other item types)
-        const BATCH_SIZE = 50;
+        const BATCH_SIZE = 40;
         const MAX_AI_RETRIES = 4;
-        const RETRY_DELAY_MS = 1000;
+        const RETRY_DELAY_MS = 2000;
 
         // Process new answer keys in batches for AI description and DB insertion
         for (let i = 0; i < newAnswerKeyItemsText.length; i += BATCH_SIZE) {

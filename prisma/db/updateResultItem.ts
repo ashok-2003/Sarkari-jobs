@@ -29,9 +29,9 @@ export async function updateResultItem() {
         const newExamResultItemsText = newExamResultItems.map(result => result.text);
 
         // Configuration for AI API calls and retry logic (same as job and admission items)
-        const BATCH_SIZE = 50;
+        const BATCH_SIZE = 40;
         const MAX_AI_RETRIES = 4;
-        const RETRY_DELAY_MS = 1000;
+        const RETRY_DELAY_MS = 2000;
 
         // Process new exam results in batches for AI description and DB insertion
         for (let i = 0; i < newExamResultItemsText.length; i += BATCH_SIZE) {

@@ -29,9 +29,9 @@ export async function updateAdmissionItem() {
         const newAdmissionItemsText = newAdmissionItems.map(admission => admission.text);
 
         // Configuration for AI API calls and retry logic (same as job items)
-        const BATCH_SIZE = 50;
+        const BATCH_SIZE = 40;
         const MAX_AI_RETRIES = 4;
-        const RETRY_DELAY_MS = 1000;
+        const RETRY_DELAY_MS = 2000;
 
         // Process new admissions in batches for AI description and DB insertion
         for (let i = 0; i < newAdmissionItemsText.length; i += BATCH_SIZE) {
