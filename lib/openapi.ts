@@ -42,7 +42,7 @@ export async function generateBatchContentDescriptions(
   let assistantExampleContent: string; // This will be a JSON string of an array
 
   switch (category.toLowerCase()) {
-    case 'job posting':
+    case 'job_posting':
       systemContent = "You are an AI assistant that summarizes job titles. For a given list of job titles, you **must return a JSON array of concise, professional summaries**, each 2-3 sentences long. Each summary should include main responsibilities, required skills, and relevant department type if applicable. **Do not include any other text besides the JSON array.** Ensure the summaries are suitable for job-seekers.";
       userExampleContent = `Summarize the following job titles:\n1. "Software Engineer"\n2. "Data Analyst"`;
       assistantExampleContent = JSON.stringify([
@@ -50,7 +50,7 @@ export async function generateBatchContentDescriptions(
         "A Data Analyst interprets complex datasets to identify trends and insights, using tools like SQL and Excel. This position demands strong analytical abilities and attention to detail, typically found in business intelligence or marketing departments."
       ]);
       break;
-    case 'exam result':
+    case 'exam_result':
       systemContent = "You are an AI assistant that summarizes exam results. For a given list of exam result titles, you **must return a JSON array of concise, informative summaries**, each 2-3 sentences long. Each summary should include what the result signifies, who it's for, and typical next steps. **Do not include any other text besides the JSON array.** Ensure summaries are clear and helpful.";
       userExampleContent = `Summarize the following exam results:\n1. "UPSC Civil Services Final Result"\n2. "IBPS Clerk Mains Score Card"`;
       assistantExampleContent = JSON.stringify([
@@ -58,7 +58,7 @@ export async function generateBatchContentDescriptions(
         "The IBPS Clerk Mains Score Card provides detailed marks for candidates who appeared in the main examination. Aspirants can check their sectional and overall scores to assess their performance. Qualified candidates will proceed to the interview or provisional allotment stage."
       ]);
       break;
-    case 'admission notice':
+    case 'admission_notice':
       systemContent = "You are an AI assistant that summarizes admission notices. For a given list of admission notice titles, you **must return a JSON array of concise summaries**, each 2-3 sentences long. Each summary should include key information like application period, eligibility highlights, and what applicants should prepare. **Do not include any other text besides the JSON array.** Ensure summaries are concise and easy to understand for prospective students.";
       userExampleContent = `Summarize the following admission notices:\n1. "DU PG Admission Notification"\n2. "JNU Ph.D. Entrance Announcement"`;
       assistantExampleContent = JSON.stringify([
@@ -66,7 +66,7 @@ export async function generateBatchContentDescriptions(
         "The JNU Ph.D. Entrance Announcement details the admission process for doctoral programs. Candidates must hold a master's degree in a relevant field and qualify the entrance examination. Prepare your research proposal and academic transcripts for submission."
       ]);
       break;
-    case 'answer key':
+    case 'answer_key':
       systemContent = "You are an AI assistant that summarizes answer key releases. For a given list of answer key titles, you **must return a JSON array of concise summaries**, each 2-3 sentences long. Each summary should explain its purpose, how candidates can use it, and information on raising objections. **Do not include any other text besides the JSON array.** Ensure summaries are clear and helpful for candidates.";
       userExampleContent = `Summarize the following answer keys:\n1. "SSC CGL Tier 1 Answer Key"\n2. "NEET UG Provisional Key"`;
       assistantExampleContent = JSON.stringify([
@@ -74,7 +74,7 @@ export async function generateBatchContentDescriptions(
         "The NEET UG Provisional Key provides official answers for the medical entrance exam. Candidates can challenge provisional answers if they find discrepancies. This key is crucial for score estimation before final results are declared."
       ]);
       break;
-    case 'admit card':
+    case 'admit_card':
       systemContent = "You are an AI assistant that summarizes admit card releases. For a given list of admit card titles, you **must return a JSON array of concise summaries**, each 2-3 sentences long. Each summary should include details like exam date, required documents for entry, and download instructions. **Do not include any other text besides the JSON array.** Ensure summaries are essential for candidates.";
       userExampleContent = `Summarize the following admit cards:\n1. "JEE Main Admit Card"\n2. "UPSC NDA Admit Card"`;
       assistantExampleContent = JSON.stringify([

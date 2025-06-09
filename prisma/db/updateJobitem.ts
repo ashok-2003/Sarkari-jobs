@@ -33,7 +33,7 @@ export async function updateJobItem(){
             // Retry loop for AI description generation.
             while (retries <= MAX_AI_RETRIES && !success) {
                 try {
-                    descriptions = await generateBatchContentDescriptions("job posting", batch);
+                    descriptions = await generateBatchContentDescriptions("job_posting", batch);
                     
                     // Validate if AI returned descriptions for all items in the batch.
                     if (descriptions.length === batch.length) {
