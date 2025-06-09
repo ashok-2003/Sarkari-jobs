@@ -2,7 +2,7 @@ import { Card, CardHeader, CardContent, CardFooter } from "@/components/ui/card"
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { Bookmark, FileText, Zap, ArrowRight } from "lucide-react";
-import { JobCard } from "@/components/job-card";
+import { JobCard, JobCardProps } from "@/components/job-card";
 
 
 
@@ -97,21 +97,31 @@ function Features() {
 }
 
 
-const sampleJobs = [
+const sampleJobs : JobCardProps[] = [
   {
     title: "UPPSC Staff Nurse (Unani)",
     description: "Recruitment for Unani-qualified staff nurses in UP by UPPSC, offering up to ₹1.4 L/month. Requires diploma in Unani nursing and midwifery along with U.P. Council registration. Duties include patient care, administering treatments according to Unani principles, and maintaining clinical records.",
     imageUrl: "https://images.unsplash.com/photo-1734002886107-168181bcd6a1",
+    herf : "https://uppsc.up.nic.in/Notifications.aspx",
+    bookmark: false,
+    wishlist: false,
+    
   },
   {
     title: "SSC CGL Assistant Section Officer",
     description: "The Assistant Section Officer (ASO) in CSS functions as a Group B officer handling clerical tasks—file preparation, drafting reports, routine noting—and ensures coordination between Parliamentary and Secretariat offices. Payscale from ₹44.9 k to ₹1.42 L/month with DA and benefits.",
     imageUrl: "https://images.unsplash.com/photo-1746640546704-74e784dcd986",
+    herf : "https://ssc.nic.in/SSCFileServer/PortalManagement/NotificationPdf/2023/Notification_CGL_2023.pdf",
+    bookmark: true,
+    wishlist: true,
   },
   {
     title: "RRB Technician (Railways)",
     description: "Railway Technicians maintain and repair rolling stock such as locomotives, coaches, and signal systems. The role involves inspection, troubleshooting, diagnostics, and safety checks. Salary starts around ₹19.9 k plus dearness, medical, travel, and housing allowances.",
     imageUrl: "https://images.unsplash.com/photo-1647173047704-f6b591e82065",
+    herf : "https://www.rrbcdg.gov.in/rrbcdg/noticeboard/NoticeBoard.html",
+    bookmark: false,
+    wishlist: true,
   },
 ];
 
