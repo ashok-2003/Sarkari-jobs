@@ -11,7 +11,7 @@ import { NextResponse } from "next/server";
 
 
 export async function GET() {
-  const data = await fetchLatestSyllabus();
+  const data = await fetchLatestJobs();
     return NextResponse.json(data, {
         status: 200, 
     });
