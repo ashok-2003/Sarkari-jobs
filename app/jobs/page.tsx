@@ -3,8 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import prisma from "@/prisma/prisma"
 
 export default async function () {
-    const delay = new Promise((resolve) => setTimeout(resolve , 20000));
-    await delay
+    // const delay = new Promise((resolve) => setTimeout(resolve , 20000));
     const JobData = await prisma.jobItem.findMany({});
 
     return (
