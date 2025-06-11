@@ -34,7 +34,7 @@ export type JobCardProps = {
 
 
 
-export function JobCard({ key, title, description, imageUrl, herf, bookmark, wishlist, last_date }: JobCardProps) {
+export function JobCard({ title, description, imageUrl, herf, bookmark, wishlist, last_date }: JobCardProps) {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const cardVariants = {
     hidden: { opacity: 0, y: 50 },

@@ -3,7 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { getCategoryImagePath } from "@/lib/imageCategory";
 import prisma from "@/prisma/prisma"
 
-export default async function () {
+export default async function page () {
   // const delay = new Promise((resolve) => setTimeout(resolve , 20000));
   const rawJobData = await prisma.jobItem.findMany({});
   const JobDataWithImages = rawJobData.map(job => {
