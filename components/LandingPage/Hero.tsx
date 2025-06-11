@@ -1,6 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react"; // Import ArrowRight if used in Hero
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -13,9 +14,11 @@ export default function Hero() {
           Simplify your job hunt — discover latest govt jobs, save your favorites, and track results effortlessly. Your one-stop platform for every opportunity.
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4 pt-4">
-          <Button size="lg" className="text-base font-semibold">
-            Explore Jobs
-          </Button>
+          <Link href={"/jobs"}>
+            <Button size="lg" className="text-base font-semibold">
+              Explore Jobs
+            </Button>
+          </Link>
           <Button size="lg" variant="ghost" className="text-base font-semibold group">
             Sign Up Free
             <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
