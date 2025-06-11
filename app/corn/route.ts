@@ -8,6 +8,8 @@
 // import { fetchLatestSyllabus } from "@/lib/rapid-api/latest-syllabus"; // Keep if used elsewhere or for future testing
 // import { updateAdmissionItem } from "@/prisma/db/updateAdmissionItem";
 // import { updateJobItem } from "@/prisma/db/updateJobitem";
+import { updateAdmitCardItem } from "@/prisma/db/updateAdmitCardItem";
+import { updateAnswerKeyItem } from "@/prisma/db/updateAnswerKey";
 import { updateResultItem } from "@/prisma/db/updateResultItem";
 import { NextResponse } from "next/server";
 
@@ -15,7 +17,7 @@ import { NextResponse } from "next/server";
 export async function GET() {
   try {
     // Call the updateJobItem function to trigger the logic
-    await updateResultItem();
+    await updateAdmitCardItem();
 
     // After updateJobItem has run, you might want to fetch and return the *updated* job items
     // from your database to verify the changes. Or, just return a success message.
