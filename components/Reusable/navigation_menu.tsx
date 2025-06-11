@@ -35,8 +35,9 @@ export const Navigation_Menu = () => {
     const navItems = [
         { href: "/jobs", label: "Jobs" },
         { href: "/result", label: "Results" },
-        { href: "/answer-key", label: "Answer Key" },
         { href: "/admission", label: "Admission" },
+        { href: "/answer-key", label: "Answer Key" },
+        { href: "/admit-card", label: "Admit Cards"},
     ];
 
     return (
