@@ -23,7 +23,7 @@ export type JobCardProps = {
   title: string;
   description: string;
   imageUrl?: string;
-  lastdate?: string;
+  last_date: string;
   herf: string;
   bookmark?: boolean;
   wishlist?: boolean;
@@ -34,12 +34,15 @@ export type JobCardProps = {
 
 
 
-export function JobCard({ key, title, description, imageUrl, herf, bookmark, wishlist }: JobCardProps) {
+export function JobCard({ key, title, description, imageUrl, herf, bookmark, wishlist, last_date }: JobCardProps) {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const cardVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0 },
   }
+
+  const formattedDateForParsing = last_date.split('/').reverse().join('-');
+  const dateObject = new Date(formattedDateForParsing);
 
   return (
     <motion.div
@@ -64,6 +67,21 @@ export function JobCard({ key, title, description, imageUrl, herf, bookmark, wis
         )}
         <div className="flex flex-col flex-grow justify-between h-full">
           <CardContent className="flex-grow">
+            {/* Simple Last Date Display */}
+            <div className="flex justify-start items-center mb-2">
+              {/* Check if the original last_date string is not empty before trying to display */}
+              {last_date && (
+                <p className="text-sm text-red-500 font-semibold">
+                  Last Date:{" "}
+                  {/* Use the dateObject created from the formatted string */}
+                  {dateObject.toLocaleDateString("en-IN", {
+                    day: "2-digit",
+                    month: "short",
+                    year: "numeric",
+                  })}
+                </p>
+              )}
+            </div>
             <h4 className="font-bold text-lg overflow-hidden line-clamp-2">{title}</h4>
             <p className="text-sm text-muted-foreground mb-2 line-clamp-2">
               {description}
@@ -102,7 +120,7 @@ export function JobCard({ key, title, description, imageUrl, herf, bookmark, wis
                     />
                   </Button>
                 </TooltipTrigger>
-                <TooltipContent className="text-sm font-light">
+                <TooltipContent>
                   <p>{bookmark ? "Remove from Bookmark" : "Add to Bookmark"}</p>
                 </TooltipContent>
               </Tooltip>

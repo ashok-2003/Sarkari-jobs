@@ -1,41 +1,57 @@
 import { JobCard } from "@/components/Reusable/job-card";
 import { Card, CardContent } from "@/components/ui/card";
+import { getCategoryImagePath } from "@/lib/imageCategory";
 import prisma from "@/prisma/prisma"
 
 export default async function () {
-    // const delay = new Promise((resolve) => setTimeout(resolve , 20000));
-    const JobData = await prisma.jobItem.findMany({});
+  // const delay = new Promise((resolve) => setTimeout(resolve , 20000));
+  const rawJobData = await prisma.jobItem.findMany({});
+  const JobDataWithImages = rawJobData.map(job => {
+    // Get the category image path based on the job's title (text field)
+    const categoryImagePath = getCategoryImagePath(job.text);
 
-    return (
-        <main className="space-y-8 py-10 px-4 md:px-8">
-            <Card className="bg-gradient-to-r from-teal-500 to-emerald-600 text-white py-12 px-6 shadow-xl rounded-2xl text-center">
-                <CardContent className="space-y-4">
-                    <h1 className="scroll-m-20 text-center text-4xl md:5-xl font-extrabold tracking-tight text-balance">
-                        Unlock Your Sarkari Career. Instantly.
-                    </h1>
-                    <p className="text-lg md:text-xl max-w-2xl mx-auto font-light">
-                        Find the latest government job opportunities, get quick insights, and apply with ease.
-                    </p>
-                </CardContent>
-            </Card>
+    return {
+      id: job.id,
+      title: job.text,
+      description: job.description ?? "",
+      imageUrl: categoryImagePath, // Assign the determined image path here
+      herf: job.href,
+      last_date: job.last_date
+    };
+  });
 
-            <h1 className="scroll-m-20 text-center text-3xl font-extrabold tracking-tight text-balance">
-                Latest Job Openings
-            </h1>
+  return (
+    <main className="space-y-8 py-10 px-4 md:px-8">
+      <Card className="bg-gradient-to-r from-blue-500 to-indigo-600 text-white py-16 px-6 shadow-xl rounded-2xl text-center">
+        <CardContent className="space-y-4">
+          <h1 className="scroll-m-20 text-center text-4xl md:5-xl font-extrabold tracking-tight text-balance">
+            Unlock Your Sarkari Career. Instantly.
+          </h1>
+          <p className="text-lg md:text-xl max-w-2xl mx-auto font-light">
+            Find the latest government job opportunities, get quick insights, and apply with ease.
+          </p>
+        </CardContent>
+      </Card>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 p-8 m-4 items-center justify-items-center">
-                {JobData.map((job) => (
-                    <JobCard
-                        key={job.id}
-                        title={job.text}
-                        description={job.description ?? ""}
-                        imageUrl="https://images.unsplash.com/photo-1653837864465-aec67ae35ed5"
-                        herf={job.href}
-                    />
-                ))}
-            </div>
-        </main>
-    )
+      <h1 className="scroll-m-20 text-center text-3xl font-extrabold tracking-tight text-balance
+                   bg-gradient-to-r from-blue-500 to-indigo-600 bg-clip-text text-transparent">
+        Latest Job Openings
+      </h1>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 p-8 m-4 items-center justify-items-center">
+        {JobDataWithImages.map((job) => (
+          <JobCard
+            key={job.id}
+            title={job.title}
+            description={job.description ?? ""}
+            imageUrl={job.imageUrl}
+            herf={job.herf}
+            last_date={job.last_date ?? ""}
+          />
+        ))}
+      </div>
+    </main>
+  )
 }
 
 
