@@ -38,6 +38,7 @@ export const Navigation_Menu = () => {
         { href: "/admission", label: "Admission" },
         { href: "/answer-key", label: "Answer Key" },
         { href: "/admit-card", label: "Admit Cards"},
+        { href: "/syllabus", label: "Syllabus"},
     ];
 
     return (
@@ -48,7 +49,7 @@ export const Navigation_Menu = () => {
             </Link>
 
             {/* Middle Section: Navigation Links (Visible on larger screens) */}
-            <NavigationMenu className="hidden md:block">
+            <NavigationMenu className="hidden lg:block">
                 <NavigationMenuList className="space-x-4">
                     {navItems.map((item) => (
                         <NavigationMenuItem key={item.href}>
@@ -80,7 +81,7 @@ export const Navigation_Menu = () => {
                 <ModeToggle />
 
                 {/* Mobile Menu Dropdown (Visible only on mobile) */}
-                <div className="md:hidden">
+                <div className="lg:hidden">
                     <DropdownMenu>
                         <DropdownMenuTrigger asChild>
                             <Button variant="outline" size="icon">

@@ -28,5 +28,7 @@ export async function fetchLatestAnswerKey(): Promise<AnswerKeyItem[]> {
         return [];
     }
 
-    return allAnswerKey;
+    const numberOfItemsToTake = Math.min(allAnswerKey.length, 1000);
+    const limitedResult = allAnswerKey.slice(0, numberOfItemsToTake);
+    return limitedResult;
 }

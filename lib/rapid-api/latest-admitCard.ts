@@ -28,5 +28,7 @@ export async function fetchLatestAdmitCard(): Promise<AdmitCardItem[]> {
         return [];
     }
 
-    return allAdmitCard;
+    const numberOfItemsToTake = Math.min(allAdmitCard.length, 1000);
+    const limitedResult = allAdmitCard.slice(0, numberOfItemsToTake);
+    return limitedResult;
 }

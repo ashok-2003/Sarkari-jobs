@@ -27,6 +27,7 @@ export async function fetchLatestResult(): Promise<ResultItem[]> {
         console.warn("/scrape/result returned an empty result array.");
         return [];
     }
-
-    return allResult;
+    const numberOfItemsToTake = Math.min(allResult.length, 1000);
+    const limitedResult = allResult.slice(0, numberOfItemsToTake);
+    return limitedResult;
 }
