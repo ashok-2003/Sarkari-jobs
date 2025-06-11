@@ -8,17 +8,17 @@ import { OtherCard } from "@/components/Reusable/other-page-card";
 
 export default async function page() {
 
-    const rawadmissionData = await prisma.resultItem.findMany({});
-    const admissionDataWithImages = rawadmissionData.map(admission => {
-        // Get the category image path based on the admission's title (text field)
-        const categoryImagePath = getCategoryImagePath(admission.text);
+    const rawresultData = await prisma.resultItem.findMany({});
+    const resultDataWithImages = rawresultData.map(result => {
+        // Get the category image path based on the result's title (text field)
+        const categoryImagePath = getCategoryImagePath(result.text);
 
         return {
-            id: admission.id,
-            title: admission.text,
-            description: admission.description ?? "",
+            id: result.id,
+            title: result.text,
+            description: result.description ?? "",
             imageUrl: categoryImagePath, // Assign the determined image path here
-            herf: admission.href,
+            herf: result.href,
         };
     });
 
@@ -30,7 +30,7 @@ export default async function page() {
                         Unlock Your Sarkari Career. Instantly.
                     </h1>
                     <p className="text-lg md:text-xl max-w-2xl mx-auto font-light">
-                        Find the latest government Admission opportunities, get quick insights, and apply with ease.
+                        Find the latest government result opportunities, get quick insights, and apply with ease.
                     </p>
                 </CardContent>
             </Card>
@@ -40,13 +40,13 @@ export default async function page() {
                 All Results.
             </h1>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 p-8 m-4 items-center justify-items-center">
-                {admissionDataWithImages.map((admission) => (
+                {resultDataWithImages.map((result) => (
                     <OtherCard
-                        key={admission.id}
-                        title={admission.title}
-                        description={admission.description ?? ""}
-                        imageUrl={admission.imageUrl}
-                        herf={admission.herf}
+                        key={result.id}
+                        title={result.title}
+                        description={result.description ?? ""}
+                        imageUrl={result.imageUrl}
+                        herf={result.herf}
                         page="Result"
                     />
                 ))}

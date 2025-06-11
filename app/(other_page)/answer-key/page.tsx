@@ -8,17 +8,17 @@ import { OtherCard } from "@/components/Reusable/other-page-card";
 
 export default async function page() {
 
-    const rawadmissionData = await prisma.answerKeyItem.findMany({});
-    const admissionDataWithImages = rawadmissionData.map(admission => {
-        // Get the category image path based on the admission's title (text field)
-        const categoryImagePath = getCategoryImagePath(admission.text);
+    const rawanswerkeyData = await prisma.answerKeyItem.findMany({});
+    const answerkeyDataWithImages = rawanswerkeyData.map(answerkey => {
+        // Get the category image path based on the answerkey's title (text field)
+        const categoryImagePath = getCategoryImagePath(answerkey.text);
 
         return {
-            id: admission.id,
-            title: admission.text,
-            description: admission.description ?? "",
+            id: answerkey.id,
+            title: answerkey.text,
+            description: answerkey.description ?? "",
             imageUrl: categoryImagePath, // Assign the determined image path here
-            herf: admission.href,
+            herf: answerkey.href,
         };
     });
 
@@ -30,7 +30,7 @@ export default async function page() {
                         Unlock Your Sarkari Career. Instantly.
                     </h1>
                     <p className="text-lg md:text-xl max-w-2xl mx-auto font-light">
-                        Find the latest government Admission opportunities, get quick insights, and apply with ease.
+                        Find the latest government answerkey opportunities, get quick insights, and apply with ease.
                     </p>
                 </CardContent>
             </Card>
@@ -40,13 +40,13 @@ export default async function page() {
                 All Answer Key.
             </h1>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 p-8 m-4 items-center justify-items-center">
-                {admissionDataWithImages.map((admission) => (
+                {answerkeyDataWithImages.map((answerkey) => (
                     <OtherCard
-                        key={admission.id}
-                        title={admission.title}
-                        description={admission.description ?? ""}
-                        imageUrl={admission.imageUrl}
-                        herf={admission.herf}
+                        key={answerkey.id}
+                        title={answerkey.title}
+                        description={answerkey.description ?? ""}
+                        imageUrl={answerkey.imageUrl}
+                        herf={answerkey.herf}
                         page="Answer Key"
                     />
                 ))}
@@ -54,3 +54,41 @@ export default async function page() {
         </main>
     )
 }
+
+
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Sarkari Answer Key Download | Latest Government Exam Solutions",
+  description: "Check and download the latest government exam answer keys and question paper solutions. Verify your answers and estimate your score for all Sarkari exams.",
+  keywords: "Sarkari Answer Key, Government Exam Solutions, Download Answer Key, Question Paper Solutions, Exam Analysis, Score Estimation, Latest Answer Key, Sarkari Naukri Answer Key, India Exam Answer Key",
+  openGraph: {
+    title: "Sarkari Answer Key Download | Latest Government Exam Solutions",
+    description: "Check and download the latest government exam answer keys and question paper solutions. Verify your answers and estimate your score for all Sarkari exams.",
+    url: "https://www.sarkarijobs.com/answer-key", // Updated URL for the answer key page
+    siteName: "Sarkari Answer Key", // Consider keeping "Sarkari Jobs" as the main brand if applicable.
+    images: [
+      {
+        url: 'https://www.sarkarijobs.com/og-image-answer-key.jpg', // **ACTION REQUIRED: Create this image specific to the answer key page!**
+        width: 1200,
+        height: 630,
+        alt: 'Sarkari Exam Answer Keys & Solutions',
+      },
+    ],
+    locale: 'en_IN',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "Sarkari Answer Key Download | Latest Government Exam Solutions",
+    description: "Check and download the latest government exam answer keys and question paper solutions. Verify your answers and estimate your score for all Sarkari exams.",
+    images: ['https://www.sarkarijobs.com/twitter-image-answer-key.jpg'], // **ACTION REQUIRED: Create this image specific to the answer key page!**
+  },
+  alternates: {
+    canonical: 'https://www.sarkarijobs.com/answer-key', // Your main answer key page URL
+  },
+  icons: {
+    icon: '/favicon.ico', // These generally remain site-wide
+    apple: '/apple-touch-icon.png', // These generally remain site-wide
+  },
+};
