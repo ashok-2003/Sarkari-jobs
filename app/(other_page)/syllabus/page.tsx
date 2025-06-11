@@ -39,7 +39,7 @@ export default async function page() {
                    bg-gradient-to-r from-blue-500 to-indigo-600 bg-clip-text text-transparent">
                 All syllabuss.
             </h1>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 p-8 m-4 items-center justify-items-center">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4 items-center justify-items-center">
                 {syllabusDataWithImages.map((syllabus) => (
                     <OtherCard
                         key={syllabus.id}

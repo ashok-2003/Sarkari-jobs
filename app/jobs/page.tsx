@@ -38,7 +38,7 @@ export default async function page () {
         Latest Job Openings
       </h1>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 p-8 m-4 items-center justify-items-center">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4 items-center justify-items-center">
         {JobDataWithImages.map((job) => (
           <JobCard
             key={job.id}
