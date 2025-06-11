@@ -3,13 +3,15 @@
 // import { fetchAdmission } from "@/lib/rapid-api/latest-admission"; // Keep if used elsewhere or for future testing
 // import { fetchLatestAdmitCard } from "@/lib/rapid-api/latest-admitCard"; // Keep if used elsewhere or for future testing
 // import { fetchLatestAnswerKey } from "@/lib/rapid-api/latest-answerKey"; // Keep if used elsewhere or for future testing
-// import { fetchLatestJobs } from "@/lib/rapid-api/latest-job"; // This is likely used by updateJobItem internally
+import { fetchLatestJobs } from "@/lib/rapid-api/latest-job"; // This is likely used by updateJobItem internally
 // import { fetchLatestResult } from "@/lib/rapid-api/latest-result"; // Keep if used elsewhere or for future testing
 // import { fetchLatestSyllabus } from "@/lib/rapid-api/latest-syllabus"; // Keep if used elsewhere or for future testing
 // import { updateAdmissionItem } from "@/prisma/db/updateAdmissionItem";
 // import { updateJobItem } from "@/prisma/db/updateJobitem";
+import { updateAdmissionItem } from "@/prisma/db/updateAdmissionItem";
 import { updateAdmitCardItem } from "@/prisma/db/updateAdmitCardItem";
 import { updateAnswerKeyItem } from "@/prisma/db/updateAnswerKey";
+import { updateJobItem } from "@/prisma/db/updateJobitem";
 import { updateResultItem } from "@/prisma/db/updateResultItem";
 import { NextResponse } from "next/server";
 
@@ -45,3 +47,12 @@ export async function GET() {
     );
   }
 }
+
+
+
+// export async function GET() {
+//   const data = await fetchLatestJobs();
+//     return NextResponse.json(data, {
+//         status: 200, 
+//     });
+// }
