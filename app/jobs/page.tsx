@@ -22,9 +22,9 @@ export default async function page () {
 
   return (
     <main className="space-y-8 py-10 px-4 md:px-8">
-      <Card className="bg-gradient-to-r from-blue-500 to-indigo-600 text-white py-16 px-6 shadow-xl rounded-2xl text-center">
+      <Card className="bg-linear-to-r from-indigo-500 via-blue-500 to-cyan-500 text-white py-16 px-6 shadow-xl rounded-2xl text-center">
         <CardContent className="space-y-4">
-          <h1 className="scroll-m-20 text-center text-4xl md:5-xl font-extrabold tracking-tight text-balance">
+          <h1 className="scroll-m-20 text-center text-3xl md:5-xl font-extrabold tracking-tight text-balance">
             Unlock Your Sarkari Career. Instantly.
           </h1>
           <p className="text-lg md:text-xl max-w-2xl mx-auto font-light">
@@ -34,7 +34,7 @@ export default async function page () {
       </Card>
 
       <h1 className="scroll-m-20 text-center text-3xl font-extrabold tracking-tight text-balance
-                   bg-gradient-to-r from-blue-500 to-indigo-600 bg-clip-text text-transparent">
+                   bg-linear-to-r from-purple-500 via-indigo-500 to-blue-500 bg-clip-text text-transparent">
         Latest Job Openings
       </h1>
 

@@ -7,10 +7,10 @@ export default function Hero() {
   return (
     <Card className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-16 px-8 shadow-xl rounded-2xl">
       <CardContent className="text-center space-y-6">
-        <h1 className="text-4xl md:text-5xl font-extrabold leading-tight">
+        <h1 className="text-2xl md:text-4xl font-extrabold leading-tight">
           The Ultimate Destination for Sarkari Jobs & Results
         </h1>
-        <p className="text-lg md:text-xl max-w-2xl mx-auto font-light">
+        <p className="text-md md:text-xl max-w-2xl mx-auto font-light">
           Simplify your job hunt — discover latest govt jobs, save your favorites, and track results effortlessly. Your one-stop platform for every opportunity.
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4 pt-4">

@@ -44,8 +44,10 @@ export const Navigation_Menu = () => {
     return (
         <div className="fixed top-0 right-0 left-0 flex items-center justify-between p-4 shadow-md backdrop-blur-xl z-50">
 
-            <Link href="/" className="text-4xl text-blue-600 font-extrabold tracking-tight text-balance">
-                Sarkari Jobs
+            <Link href="/">
+                <p className="text-2xl md:text-4xl bg-linear-to-r from-blue-700 via-blue-500 to-indigo-700 font-extrabold tracking-tight text-balance bg-clip-text text-transparent">
+                    Sarkari Jobs
+                </p>
             </Link>
 
             {/* Middle Section: Navigation Links (Visible on larger screens) */}
