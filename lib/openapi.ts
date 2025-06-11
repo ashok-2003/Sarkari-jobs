@@ -57,11 +57,11 @@ export async function generateBatchContentDescriptions(
       ]);
       break;
     case 'admission_notice':
-      systemContent = "You are an AI assistant that summarizes admission notices. For a given list of admission notice titles, you **must return a JSON array of objects**, where each object has a 'summary' key with a concise summary (2-3 sentences) including key information like application period, eligibility highlights, and what applicants should prepare. **Do not include any other text besides the JSON array.** Ensure summaries are concise and easy to understand for prospective students.";
+      systemContent = "You are an AI assistant that summarizes admission notices. For a given list of admission notice titles, you **must return a JSON array of objects**, where each object has a 'summary' key with a concise summary (2-3 sentences) including key information like syallabus, eligibility highlights, and what applicants should prepare. **Do not include any other text besides the JSON array.** Ensure summaries are concise and easy to understand for prospective students.";
       userExampleContent = `Summarize the following admission notices:\n1. "DU PG Admission Notification"\n2. "JNU Ph.D. Entrance Announcement"`;
       
       assistantExampleContent = JSON.stringify([
-        {"summary": "The Delhi University PG Admission Notification announces the opening of applications for various postgraduate courses. Prospective students should check eligibility criteria and prepare required documents for the online application process. Application dates are from [Start Date] to [End Date]."},
+        {"summary": "The Delhi University PG Admission Notification announces the opening of applications for various postgraduate courses. Prospective students should check eligibility criteria and prepare required documents for the online application process."},
         {"summary": "The JNU Ph.D. Entrance Announcement details the admission process for doctoral programs. Candidates must hold a master's degree in a relevant field and qualify the entrance examination. Prepare your research proposal and academic transcripts for submission."}
       ]);
       break;
