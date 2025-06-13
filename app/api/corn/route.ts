@@ -16,14 +16,7 @@ import { NextResponse } from "next/server";
 
 
 
-export async function GET(request: Request) {
-  const secret = request.headers.get("x-cron-secret");
-  if(!secret){
-    return NextResponse.json({message : "corn secret is missing"} , {status : 500});
-  }
-  if (secret !== process.env.CRON_SECRET) {
-    return NextResponse.json({ message: "Unauthorized" }, { status: 401 });
-  }
+export async function GET() {
 
   try {
     await updateJobItem();
