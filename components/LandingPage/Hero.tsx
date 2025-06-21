@@ -19,10 +19,12 @@ export default function Hero() {
               Explore Jobs
             </Button>
           </Link>
-          <Button size="lg" variant="ghost" className="text-base font-semibold group">
-            Sign Up Free
-            <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-          </Button>
+          <Link href={"/login"}>
+            <Button size="lg" variant="ghost" className="text-base font-semibold group">
+              Sign Up Free
+              <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+            </Button>
+          </Link>
         </div>
       </CardContent>
     </Card>
