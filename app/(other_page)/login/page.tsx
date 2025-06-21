@@ -5,7 +5,7 @@ import { signIn } from "next-auth/react"
 import { useSearchParams } from "next/navigation";
 import { ChevronRightIcon } from "lucide-react";
 
-export default function page() {
+export default function Page() {
     const searchPrams = useSearchParams();
     const callbackUrl = searchPrams.get("callbackUrl") || "/";
     const handleGoogleSingin = async () => {

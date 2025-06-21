@@ -19,7 +19,7 @@ export const authOptions: NextAuthOptions = {
     },
 
     callbacks: {
-        async signIn({user , account}){
+        async signIn({user}){
             if(!user.email){
                 console.error("user signin attempt without email" , user)
                 return false;
