@@ -1,12 +1,11 @@
 import Image from "next/image";
-// Import your components from their new locations
 import Hero from "@/components/LandingPage/Hero";
 import Features from "@/components/LandingPage/Features";
-import SampleJobs from "@/components/LandingPage/SampleJobs";
 import AboutUsSection from "@/components/LandingPage/AboutUsSection";
 
 
 import type { Metadata } from "next";
+import CoreFeatures from "@/components/LandingPage/CoreFeatures";
 
 export const metadata: Metadata = { // Changed from sarkariJobsMetadata to metadata for Next.js convention
   title: "Sarkari Jobs: Secure Your Future with Government Job Opportunities in India",
@@ -49,16 +48,17 @@ export default function HomePage() {
     <main className="space-y-16 py-10 px-6 md:px-16">
       <Hero />
       <section>
+        <h2 className="text-3xl font-bold text-center mb-8">Explore Our Sections</h2>
+        <CoreFeatures />
+      </section>
+      <section>
         <h2 className="text-4xl font-bold text-center mb-12">Core Features</h2>
         <Features />
       </section>
       <section className="w-full max-w-5xl mx-auto px-4 rounded-2xl">
         <Image src="/job-searching.svg" width={1920} height={0} className="w-full h-auto object-contain rounded-2xl" alt="Job search illustration" />
       </section>
-      <section>
-        <h2 className="text-3xl font-bold text-center mb-8">Try a Few Sample Jobs</h2>
-        <SampleJobs />
-      </section>
+      
       <section>
         <AboutUsSection />
       </section>
