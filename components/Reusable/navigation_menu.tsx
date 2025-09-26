@@ -47,93 +47,98 @@ export const Navigation_Menu = () => {
     };
 
     return (
-        <div className="fixed top-0 right-0 left-0 flex items-center justify-between p-4 shadow-md backdrop-blur-xl z-50">
+        <div className=" flex flex-col">
+            <div className="fixed top-0 right-0 left-0 flex items-center justify-center z-50 bg-blue-700 h-10 px-4 text-center text-red-600 text-2xl font-bold font-sans">
+                Currently thier are no new job posting we are working on it. Thankyou for your attention 
+            </div>
+            <div className="fixed top-10 right-0 left-0 flex items-center justify-between p-4 shadow-md backdrop-blur-xl z-50">
 
-            <Link href="/">
-                <p className="text-2xl md:text-4xl bg-gradient-to-r from-blue-700 via-blue-500 to-blue-700 font-extrabold tracking-tight text-balance bg-clip-text text-transparent">
-                    Sarkari Jobs
-                </p>
-            </Link>
+                <Link href="/">
+                    <p className="text-2xl md:text-4xl bg-gradient-to-r from-blue-700 via-blue-500 to-blue-700 font-extrabold tracking-tight text-balance bg-clip-text text-transparent">
+                        Sarkari Jobs
+                    </p>
+                </Link>
 
-            {/* Middle Section: Navigation Links (Visible on larger screens) */}
-            <NavigationMenu className="hidden lg:block">
-                <NavigationMenuList className="space-x-4">
-                    {navItems.map((item) => (
-                        <NavigationMenuItem key={item.href}>
-                            <NavigationMenuLink
-                                asChild
-                                className={navigationMenuTriggerStyle()}
-                                data-active={pathname === item.href ? true : undefined}
-                            >
-                                <Link href={item.href}>
-                                    {item.label}
-                                </Link>
-                            </NavigationMenuLink>
-                        </NavigationMenuItem>
-                    ))}
-                </NavigationMenuList>
-            </NavigationMenu>
-
-            {/* Right Section: Buttons and Mobile Menu Trigger */}
-            <div className="flex items-center space-x-4">
-                {status === "authenticated" ? (
-                    <DropdownMenu>
-                        <DropdownMenuTrigger asChild>
-                            <Button variant="ghost" className="relative h-8 w-8 rounded-full">
-                                <Avatar>
-                                    <AvatarImage src={session.user?.image || ""} alt={session.user?.name || "User Avatar"} />
-                                    {/* Fallback to initials or a generic icon */}
-                                    <AvatarFallback>
-                                        {session.user?.name ? session.user.name.charAt(0).toUpperCase() : <UserIcon className="h-5 w-5" />}
-                                    </AvatarFallback>
-                                </Avatar>
-                                <span className="sr-only">Open user menu</span>
-                            </Button>
-                        </DropdownMenuTrigger>
-                        <DropdownMenuContent align="end" forceMount>
-                            {session.user?.name && (
-                                <DropdownMenuItem className="flex flex-col items-start px-4 py-2 text-sm font-normal">
-                                    <p className="font-medium">{session.user.name}</p>
-                                    <p className="text-xs text-muted-foreground">{session.user.email}</p>
-                                </DropdownMenuItem>
-                            )}
-                            <DropdownMenuSeparator />
-                            <DropdownMenuItem onClick={handleSignOut}>
-                                <LogOut className="mr-2 h-4 w-4" />
-                                Log out
-                            </DropdownMenuItem>
-                        </DropdownMenuContent>
-                    </DropdownMenu>
-                ) : (
-                    // User is not logged in (unauthenticated) - always show login link
-                    <Link href="/login" className="flex items-center hover:text-blue-600 transition-colors hover:underline hover:underline-offset-2">
-                        <UserIcon size={18} className="mr-1" /> Login
-                    </Link>
-                )}
-                
-
-                {/* dark mode toggle  */}
-                <ModeToggle /> 
-
-                {/* Mobile Menu Dropdown (Visible only on mobile) */}
-                <div className="lg:hidden">
-                    <DropdownMenu>
-                        <DropdownMenuTrigger asChild>
-                            <Button variant="outline" size="icon">
-                                <Menu className="h-[1.2rem] w-[1.2rem]" />
-                                <span className="sr-only">Open menu</span>
-                            </Button>
-                        </DropdownMenuTrigger>
-                        <DropdownMenuContent align="end">
-                            {navItems.map((item) => (
-                                <DropdownMenuItem key={item.href} asChild>
+                {/* Middle Section: Navigation Links (Visible on larger screens) */}
+                <NavigationMenu className="hidden lg:block">
+                    <NavigationMenuList className="space-x-4">
+                        {navItems.map((item) => (
+                            <NavigationMenuItem key={item.href}>
+                                <NavigationMenuLink
+                                    asChild
+                                    className={navigationMenuTriggerStyle()}
+                                    data-active={pathname === item.href ? true : undefined}
+                                >
                                     <Link href={item.href}>
                                         {item.label}
                                     </Link>
+                                </NavigationMenuLink>
+                            </NavigationMenuItem>
+                        ))}
+                    </NavigationMenuList>
+                </NavigationMenu>
+
+                {/* Right Section: Buttons and Mobile Menu Trigger */}
+                <div className="flex items-center space-x-4">
+                    {status === "authenticated" ? (
+                        <DropdownMenu>
+                            <DropdownMenuTrigger asChild>
+                                <Button variant="ghost" className="relative h-8 w-8 rounded-full">
+                                    <Avatar>
+                                        <AvatarImage src={session.user?.image || ""} alt={session.user?.name || "User Avatar"} />
+                                        {/* Fallback to initials or a generic icon */}
+                                        <AvatarFallback>
+                                            {session.user?.name ? session.user.name.charAt(0).toUpperCase() : <UserIcon className="h-5 w-5" />}
+                                        </AvatarFallback>
+                                    </Avatar>
+                                    <span className="sr-only">Open user menu</span>
+                                </Button>
+                            </DropdownMenuTrigger>
+                            <DropdownMenuContent align="end" forceMount>
+                                {session.user?.name && (
+                                    <DropdownMenuItem className="flex flex-col items-start px-4 py-2 text-sm font-normal">
+                                        <p className="font-medium">{session.user.name}</p>
+                                        <p className="text-xs text-muted-foreground">{session.user.email}</p>
+                                    </DropdownMenuItem>
+                                )}
+                                <DropdownMenuSeparator />
+                                <DropdownMenuItem onClick={handleSignOut}>
+                                    <LogOut className="mr-2 h-4 w-4" />
+                                    Log out
                                 </DropdownMenuItem>
-                            ))}
-                        </DropdownMenuContent>
-                    </DropdownMenu>
+                            </DropdownMenuContent>
+                        </DropdownMenu>
+                    ) : (
+                        // User is not logged in (unauthenticated) - always show login link
+                        <Link href="/login" className="flex items-center hover:text-blue-600 transition-colors hover:underline hover:underline-offset-2">
+                            <UserIcon size={18} className="mr-1" /> Login
+                        </Link>
+                    )}
+
+
+                    {/* dark mode toggle  */}
+                    <ModeToggle />
+
+                    {/* Mobile Menu Dropdown (Visible only on mobile) */}
+                    <div className="lg:hidden">
+                        <DropdownMenu>
+                            <DropdownMenuTrigger asChild>
+                                <Button variant="outline" size="icon">
+                                    <Menu className="h-[1.2rem] w-[1.2rem]" />
+                                    <span className="sr-only">Open menu</span>
+                                </Button>
+                            </DropdownMenuTrigger>
+                            <DropdownMenuContent align="end">
+                                {navItems.map((item) => (
+                                    <DropdownMenuItem key={item.href} asChild>
+                                        <Link href={item.href}>
+                                            {item.label}
+                                        </Link>
+                                    </DropdownMenuItem>
+                                ))}
+                            </DropdownMenuContent>
+                        </DropdownMenu>
+                    </div>
                 </div>
             </div>
         </div>
